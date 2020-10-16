@@ -1,0 +1,9 @@
+name: "basex_chocolatey"
+description: "Defunct attempt at packaging https://basex.org/ for the chocolatey package manager. I humbly gave up"
+topics:
+  []
+homepage: ""
+source:
+  provider: github
+  namespace: "sachahjkl"
+  path: "sachahjkl/basex_chocolatey"
