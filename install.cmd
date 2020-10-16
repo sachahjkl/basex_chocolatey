@@ -1,0 +1,1 @@
+choco install .\basex.9.4.3.nupkg -dv -s .

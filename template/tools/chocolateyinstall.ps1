@@ -14,8 +14,8 @@ $PackageArgs = @{
 
   Checksum      = "$checksum"
   ChecksumType  = 'sha512'
-  
-  SilentArgs   = '/VERYSILENT /SUPPRESSMSGBOXES /NORESTART /SP-'
+
+  SilentArgs   = '/S'
   ValidExitCodes= @(0)
 }
 

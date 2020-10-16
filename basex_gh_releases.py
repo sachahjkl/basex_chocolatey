@@ -12,11 +12,6 @@ from typing import Optional, Dict
 from github import Github
 
 
-def abort_on_nonzero(retcode):
-    if (retcode != 0):
-        sys.exit(retcode)
-
-
 def get_chksum(url, installer):
     subprocess.call(["curl",
                      url,
@@ -44,12 +39,10 @@ def find_and_replace_templates(package_name: str, directory: str, version: str,
                   checksum64=checksum64,
                   fname64=fname64,
                   notes=notes)
-    basepath = Path(os.getcwd()) / "templates/" / package_name
+    basepath = Path(os.getcwd()) / "template/" / package_name
     templates = [
         package_name + ".nuspec", "tools/chocolateyinstall.ps1",
-        "tools/chocolateyuninstall.ps1", "tools/chocolateybeforemodify.ps1",
-        "legal/LICENSE.txt", "legal/VERIFICATION.txt", "tools/LICENSE.txt",
-        "tools/VERIFICATION.txt"
+        "tools/chocolateyuninstall.ps1", "tools/LICENSE.txt"
     ]
 
     for template in templates:
@@ -82,7 +75,7 @@ def main():
     print(url)
     chksum = get_chksum(url, installer)
     tempdir = tempfile.mkdtemp()
-    find_and_replace_templates(pkgname+".install",
+    find_and_replace_templates(pkgname,
                                tempdir,
                                tag,
                                tag,
@@ -93,9 +86,12 @@ def main():
                                None,
                                None,
                                None)
-    abort_on_nonzero(subprocess.call(["choco",
-                                      "pack",
-                                      Path(tempdir)/(pkgname+".install.nuspec")]))
+    os.mkdir("build")
+    subprocess.call(["choco",
+                     "pack",
+                     Path(tempdir) / (pkgname + ".nuspec"),
+                     "--outputdirectory",
+                     "build"])
 
 
 if __name__ == "__main__":
