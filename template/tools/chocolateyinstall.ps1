@@ -7,7 +7,7 @@ $InstallDir   = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
 $PackageArgs = @{
   PackageName   = $PackageName
   UnzipLocation = $InstallDir
-  FileType      = 'exe'
+  FileType      = 'EXE'
   Url           = "$url"
 
   SoftwareName  = 'tweetduck*'

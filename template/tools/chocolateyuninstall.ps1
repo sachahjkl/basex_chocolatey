@@ -2,8 +2,8 @@ $ErrorActionPreference = 'Stop';
 $packageArgs = @{
   packageName   = $env:ChocolateyPackageName
   softwareName  = 'basex*'
-  fileType      = 'exe'
-  silentArgs   = '/S'
+  fileType      = 'EXE'
+  silentArgs   = '/S /Q'
   validExitCodes= @(0)
 }
 

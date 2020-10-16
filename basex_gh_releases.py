@@ -39,7 +39,7 @@ def find_and_replace_templates(package_name: str, directory: str, version: str,
                   checksum64=checksum64,
                   fname64=fname64,
                   notes=notes)
-    basepath = Path(os.getcwd()) / "template/" / package_name
+    basepath = Path(os.getcwd()) / "template"
     templates = [
         package_name + ".nuspec", "tools/chocolateyinstall.ps1",
         "tools/chocolateyuninstall.ps1", "tools/LICENSE.txt"
@@ -86,7 +86,7 @@ def main():
                                None,
                                None,
                                None)
-    os.mkdir("build")
+    Path("build").mkdir(exist_ok=True)
     subprocess.call(["choco",
                      "pack",
                      Path(tempdir) / (pkgname + ".nuspec"),
