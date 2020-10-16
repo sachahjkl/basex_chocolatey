@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>basex</id>
+    <version>$version</version>
+    <!-- <packageSourceUrl>https://github.com/Starz0r/ChocolateyPackagingScripts</packageSourceUrl> -->
+    <owners>sachahjkl</owners>
+    <title>BaseX</title>
+    <authors>Christian Grün</authors>
+    <iconUrl>https://user-images.githubusercontent.com/32895534/96245874-21beb200-0fa8-11eb-8f4d-7d6fc1d106af.png</iconUrl>
+    <licenseUrl>https://github.com/BaseXdb/basex/blob/$tag/LICENSE.md</licenseUrl>
+    <projectUrl>https://github.com/BaseXdb/basex</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <projectSourceUrl>https://github.com/BaseXdb/basex/tree/$tag</projectSourceUrl>
+    <docsUrl>https://github.com/BaseXdb/basex</docsUrl>
+    <bugTrackerUrl>https://github.com/BaseXdb/basex/issues</bugTrackerUrl>
+    <tags>basex xml xquery database</tags>
+    <description>
+BaseX is a light-weight, high-performance and scalable XML Database and an XQuery 3.1 Processor with full support for the W3C Update and Full-Text extensions. It allows you to store, query and process large corpora of textual (XML, HTML, JSON, CSV, others) and binary data. The GUI provides an XQuery editor for writing complex applications and provides various visualizations to interactively explore data. RESTXQ enables Web Application development in XQuery. BaseX is platform-independent and distributed under the free BSD License (find more in Wikipedia).
+
+If you have questions, or if you want to get into direct contact with the developer team
+and users of BaseX, please write to our [basex-talk](https://basex.org/open-source/) mailing list. Many questions are being
+discussed at [StackOverflow](https://stackoverflow.com/questions/tagged/basex); planned features are listed in our [GitHub repository](https://github.com/basexdb/basex/issues).
+</description>
+    <summary>
+      A robust, high-performance XML database engine and a highly compliant XQuery 3.1 processor.
+</summary>
+    <releaseNotes>$notes</releaseNotes>
+    <dependencies>
+      <dependency id="chocolatey-core.extension" version="1.1.0" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>
